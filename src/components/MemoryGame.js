@@ -65,6 +65,7 @@ const MemoryGame = ({ totalCards }) => {
           gap: "1rem",
         }}
       >
+        {cards.length > 0 ? (
         {cards.map((number, index) => (
           <div
             key={index}
@@ -79,7 +80,11 @@ const MemoryGame = ({ totalCards }) => {
           >
             {(flipped.includes(index) || matched.includes(index)) && number}
           </div>
-        ))}
+        ))
+      ):(
+        <p>Loading Cards...</p>
+      )
+      }
       </div>
     </div>
   );
