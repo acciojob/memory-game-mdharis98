@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import Landing from './Landing'
 import './../styles/App.css';
 import store from '../app/store'
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App = () => {
   return (
@@ -12,6 +13,9 @@ const App = () => {
         <Provider store={store}>
           <Landing />
         </Provider>
+        <ErrorBoundary>
+        <MemoryGame totalCards={12} />
+      </ErrorBoundary>
     </div>
   )
 }
